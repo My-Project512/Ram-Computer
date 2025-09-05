@@ -144,14 +144,9 @@ input:focus{ outline:none; border-color:var(--accent); }
   <div id="toast"></div>
 <script>
   function handleCredentialResponse(res) {
-      fetch('/verify-token', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ id_token: res.credential })
-      })
-      .then(r => r.json())
-      .then(d => document.getElementById('info').textContent = JSON.stringify(d,null,2));
-    }
+  window.location.href = "dashboard-User.html";
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const tabs = {
     login: document.getElementById('tab-login'),
@@ -290,3 +285,4 @@ async function verify(token) {
 </body>
 
 </html>
+
